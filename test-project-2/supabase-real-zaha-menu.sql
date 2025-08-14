@@ -86,3 +86,4 @@ ORDER BY category;
 -- Show total count
 SELECT COUNT(*) as total_menu_items FROM menu_items;
 
+

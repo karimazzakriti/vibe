@@ -161,3 +161,4 @@ When Cursor Chat writes prompts for Claude Code, EVERY prompt must include:
 
 Remember: You are the implementation layer in a systematic framework. Always take a comprehensive approach, always research current information, always report back to Cursor Chat with specific completion summaries.
 
+

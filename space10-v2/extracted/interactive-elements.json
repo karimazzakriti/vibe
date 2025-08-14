@@ -1,0 +1,218 @@
+[
+  {
+    "type": "clickable",
+    "tag": "A",
+    "classes": [
+      "styles_logo__EGQI6"
+    ],
+    "id": "",
+    "text": "Go to Space 10 home page",
+    "href": "https://space10.com/",
+    "onclick": null
+  },
+  {
+    "type": "clickable",
+    "tag": "A",
+    "classes": [],
+    "id": "",
+    "text": "History",
+    "href": "https://space10.com/history",
+    "onclick": null
+  },
+  {
+    "type": "clickable",
+    "tag": "A",
+    "classes": [],
+    "id": "",
+    "text": "Highlights",
+    "href": "https://space10.com/highlights",
+    "onclick": null
+  },
+  {
+    "type": "clickable",
+    "tag": "A",
+    "classes": [
+      "styles_cta__sCzHz",
+      "styles_secondary__thPo_"
+    ],
+    "id": "",
+    "text": "Learn More",
+    "href": "https://space10.com/history",
+    "onclick": null
+  },
+  {
+    "type": "clickable",
+    "tag": "A",
+    "classes": [
+      "styles_cta__sCzHz",
+      "styles_secondary__thPo_"
+    ],
+    "id": "",
+    "text": "Learn More",
+    "href": "https://space10.com/history",
+    "onclick": null
+  },
+  {
+    "type": "clickable",
+    "tag": "A",
+    "classes": [],
+    "id": "",
+    "text": "Team",
+    "href": "https://space10.com/team",
+    "onclick": null
+  },
+  {
+    "type": "clickable",
+    "tag": "A",
+    "classes": [],
+    "id": "",
+    "text": "Partners",
+    "href": "https://space10.com/partners",
+    "onclick": null
+  },
+  {
+    "type": "clickable",
+    "tag": "A",
+    "classes": [],
+    "id": "",
+    "text": "Awards",
+    "href": "https://space10.com/awards",
+    "onclick": null
+  },
+  {
+    "type": "clickable",
+    "tag": "A",
+    "classes": [],
+    "id": "",
+    "text": "Resources",
+    "href": "https://space10.com/resources",
+    "onclick": null
+  },
+  {
+    "type": "clickable",
+    "tag": "A",
+    "classes": [],
+    "id": "",
+    "text": "Office",
+    "href": "https://space10.com/office",
+    "onclick": null
+  },
+  {
+    "type": "clickable",
+    "tag": "A",
+    "classes": [],
+    "id": "",
+    "text": "Instagram",
+    "href": "https://www.instagram.com/space10/",
+    "onclick": null
+  },
+  {
+    "type": "clickable",
+    "tag": "A",
+    "classes": [],
+    "id": "",
+    "text": "LinkedIn",
+    "href": "https://dk.linkedin.com/company/space-10",
+    "onclick": null
+  },
+  {
+    "type": "clickable",
+    "tag": "A",
+    "classes": [],
+    "id": "",
+    "text": "Virtual",
+    "href": "https://www.spatial.io/s/SPACE10-Virtual-Public-63452f5578e70000017ad99d?share=1714815963659677697",
+    "onclick": null
+  },
+  {
+    "type": "clickable",
+    "tag": "A",
+    "classes": [],
+    "id": "",
+    "text": "GitHub",
+    "href": "https://github.com/space10-community",
+    "onclick": null
+  },
+  {
+    "type": "clickable",
+    "tag": "A",
+    "classes": [],
+    "id": "",
+    "text": "Privacy Policy",
+    "href": "https://space10.com/privacy-policy",
+    "onclick": null
+  },
+  {
+    "type": "clickable",
+    "tag": "A",
+    "classes": [],
+    "id": "",
+    "text": "Terms & Conditions",
+    "href": "https://space10.com/terms-and-conditions",
+    "onclick": null
+  },
+  {
+    "type": "clickable",
+    "tag": "BUTTON",
+    "classes": [],
+    "id": "",
+    "text": "Cookie Settings",
+    "href": null,
+    "onclick": null
+  },
+  {
+    "type": "clickable",
+    "tag": "BUTTON",
+    "classes": [
+      "styles_settingsBtn__fqjTj"
+    ],
+    "id": "",
+    "text": "",
+    "href": null,
+    "onclick": null
+  },
+  {
+    "type": "clickable",
+    "tag": "BUTTON",
+    "classes": [
+      "styles_button__sceQ0"
+    ],
+    "id": "",
+    "text": "Press",
+    "href": null,
+    "onclick": null
+  },
+  {
+    "type": "clickable",
+    "tag": "A",
+    "classes": [],
+    "id": "",
+    "text": "Privacy Policy",
+    "href": "https://space10.com/privacy-policy",
+    "onclick": null
+  },
+  {
+    "type": "clickable",
+    "tag": "BUTTON",
+    "classes": [
+      "styles_cta__sCzHz",
+      "styles_primary__8PTYF"
+    ],
+    "id": "",
+    "text": "I accept",
+    "href": null,
+    "onclick": null
+  },
+  {
+    "type": "clickable",
+    "tag": "BUTTON",
+    "classes": [
+      "styles_cta__sCzHz",
+      "styles_secondary__thPo_"
+    ],
+    "id": "",
+    "text": "Reject all",
+    "href": null,
+    "onclick": null
+  }
+]
