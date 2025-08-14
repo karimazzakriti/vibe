@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { NavigationMenu, NavigationMenuItem, NavigationMenuList } from "@/components/ui/navigation-menu";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Menu } from "lucide-react";
 
 const Space10Logo = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="64" height="12" fill="none" className="text-black">
@@ -16,165 +17,133 @@ const Space10Logo = () => (
   </svg>
 );
 
-const ArrowIcon = () => (
-  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-    <path d="M4.27048 5.588V4.484H11.8785V12.092H10.7625V8.576L10.8225 6.32L4.67848 12.5L3.88648 11.708L10.0185 5.528L7.66648 5.588H4.27048Z" fill="currentColor"/>
-  </svg>
-);
-
-const heroImages = [
-  {
-    src: "https://cdn.sanity.io/images/ag1krub5/production/a04239660def0402d9ed1ed309848a761e3b640e-762x411.png?max-h=1200&max-w=1200",
-    width: 762,
-    height: 411,
-    alt: "Space10 Project 1"
-  },
-  {
-    src: "https://cdn.sanity.io/images/ag1krub5/production/f66b1311cfa752955a8c6f10d254e2f62d3420cb-471x423.png?max-h=1200&max-w=1200",
-    width: 471,
-    height: 423,
-    alt: "Space10 Project 2"
-  },
-  {
-    src: "https://cdn.sanity.io/images/ag1krub5/production/6032b70eb6df7377e6176088269b7ab09fc4e1a6-1510x1324.png?max-h=1200&max-w=1200",
-    width: 1510,
-    height: 1324,
-    alt: "Space10 Project 3"
-  },
-  {
-    src: "https://cdn.sanity.io/images/ag1krub5/production/5074d06b9f6ad57c597535efafa520034e6701e5-2025x1434.png?max-h=1200&max-w=1200",
-    width: 2025,
-    height: 1434,
-    alt: "Space10 Project 4"
-  },
-  {
-    src: "https://cdn.sanity.io/images/ag1krub5/production/b238a18a53ad1986607a2e69071132d476291492-746x777.png?max-h=1200&max-w=1200",
-    width: 746,
-    height: 777,
-    alt: "Space10 Project 5"
-  }
-];
-
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white">
-      {/* Hero Images Grid */}
-      <div className="relative w-full h-screen overflow-hidden">
-        <div className="absolute inset-0 grid grid-cols-12 gap-4 p-4">
-          {heroImages.map((image, index) => (
-            <div
-              key={index}
-              className={`relative ${
-                index === 0 ? 'col-span-6' : 
-                index === 1 ? 'col-span-3' :
-                index === 2 ? 'col-span-3' :
-                index === 3 ? 'col-span-6' : 'col-span-6'
-              } ${
-                index < 2 ? 'row-start-1' :
-                index < 4 ? 'row-start-2' : 'row-start-3'
-              }`}
-            >
-              <Image
-                src={image.src}
-                alt={image.alt}
-                fill
-                className="object-cover rounded-lg"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                priority={index < 2}
-              />
-            </div>
-          ))}
+    <div className="min-h-screen" style={{ backgroundColor: '#f8f6f3' }}>
+      {/* Top Navigation Bar */}
+      <nav className="flex items-center justify-between px-8 py-6 border-b border-gray-200">
+        {/* Left side - Logo */}
+        <Link href="/" className="flex items-center">
+          <Space10Logo />
+          <span className="sr-only">Go to Space 10 home page</span>
+        </Link>
+
+        {/* Center - Navigation Links */}
+        <div className="hidden md:flex items-center space-x-8">
+          <Link href="/history" className="text-black hover:text-gray-600 transition-colors text-sm font-medium">
+            History
+          </Link>
+          <Link href="/highlights" className="text-black hover:text-gray-600 transition-colors text-sm font-medium">
+            Highlights
+          </Link>
+          
+          {/* Hamburger Menu Icon */}
+          <Sheet>
+            <SheetTrigger asChild>
+              <Button variant="ghost" size="sm" className="p-1">
+                <Menu className="h-5 w-5" />
+              </Button>
+            </SheetTrigger>
+            <SheetContent>
+              <div className="mt-8 space-y-4">
+                <Link href="/team" className="block text-sm text-gray-800 hover:text-black">Team</Link>
+                <Link href="/partners" className="block text-sm text-gray-800 hover:text-black">Partners</Link>
+                <Link href="/awards" className="block text-sm text-gray-800 hover:text-black">Awards</Link>
+                <Link href="/resources" className="block text-sm text-gray-800 hover:text-black">Resources</Link>
+                <Link href="/office" className="block text-sm text-gray-800 hover:text-black">Office</Link>
+              </div>
+            </SheetContent>
+          </Sheet>
+          
+          <Link href="/press" className="text-black hover:text-gray-600 transition-colors text-sm font-medium">
+            Press
+          </Link>
         </div>
 
-        {/* Navigation Overlay */}
-        <div className="absolute top-0 left-0 right-0 z-10 p-8">
-          <div className="flex items-center justify-between">
-            <Link href="/" className="flex items-center">
-              <Space10Logo />
-              <span className="sr-only">Go to Space 10 home page</span>
+        {/* Right side - Learn More with closure message */}
+        <div className="flex items-center space-x-4">
+          <span className="text-sm text-gray-600 hidden lg:block">SPACE10 has closed after almost a decade.</span>
+          <Button 
+            variant="outline" 
+            size="sm"
+            className="border-black text-black hover:bg-black hover:text-white transition-colors"
+            asChild
+          >
+            <Link href="/history">
+              Learn More
             </Link>
-            
-            <NavigationMenu>
-              <NavigationMenuList className="flex space-x-8">
-                <NavigationMenuItem>
-                  <Link href="/history" className="text-black hover:text-gray-600 transition-colors font-medium">
-                    History
-                  </Link>
-                </NavigationMenuItem>
-                <NavigationMenuItem>
-                  <Link href="/highlights" className="text-black hover:text-gray-600 transition-colors font-medium">
-                    Highlights
-                  </Link>
-                </NavigationMenuItem>
-              </NavigationMenuList>
-            </NavigationMenu>
-          </div>
+          </Button>
+        </div>
+      </nav>
+
+      {/* Main Content */}
+      <main className="container mx-auto px-8">
+        {/* Large Centered Headline with generous top padding */}
+        <div className="pt-24 pb-16 text-center max-w-4xl mx-auto">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-light text-black leading-tight tracking-tight uppercase">
+            A RESEARCH AND DESIGN LAB<br />
+            ON A MISSION TO CREATE<br />
+            A BETTER EVERYDAY LIFE<br />
+            FOR PEOPLE AND THE PLANET
+          </h1>
         </div>
 
-        {/* Main Content Overlay */}
-        <div className="absolute inset-0 flex items-center justify-center z-10">
-          <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-12 max-w-2xl mx-4 text-center shadow-xl">
-            <h1 className="text-4xl md:text-5xl font-light mb-6 text-black leading-tight">
-              SPACE10 has closed after almost a decade.
-            </h1>
-            
-            <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-              A research and design lab on a mission to create a better everyday life for people and the planet
-            </p>
-            
-            <Button 
-              variant="outline" 
-              className="border-black text-black hover:bg-black hover:text-white transition-colors"
-              asChild
-            >
-              <Link href="/history">
-                <ArrowIcon />
-                <span className="ml-2">Learn More</span>
-              </Link>
-            </Button>
+        {/* Significant whitespace then single centered image */}
+        <div className="py-16 flex justify-center">
+          <div className="max-w-2xl">
+            <Image
+              src="https://cdn.sanity.io/images/ag1krub5/production/6032b70eb6df7377e6176088269b7ab09fc4e1a6-1510x1324.png?max-h=1200&max-w=1200"
+              alt="Kitchen retail space - SPACE10 research lab"
+              width={800}
+              height={700}
+              className="w-full h-auto rounded-lg"
+              priority
+            />
           </div>
         </div>
-      </div>
+      </main>
 
-      {/* Footer */}
-      <footer className="bg-white border-t border-gray-200 py-16">
-        <div className="container mx-auto px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            <div>
-              <p className="text-sm text-gray-600 mb-4">
-                ©2024. SPACE10. <br />
+      {/* Bottom Footer */}
+      <footer className="border-t border-gray-200 px-8 py-12 mt-24">
+        <div className="container mx-auto">
+          <div className="flex justify-between items-start">
+            {/* Left side - Copyright and timestamp */}
+            <div className="space-y-2">
+              <p className="text-sm text-gray-600">
+                ©2024. SPACE10.<br />
                 All Rights Reserved.
               </p>
-              
               <div className="flex space-x-4 text-xs text-gray-500">
                 <span>1920×100000</span>
                 <span>Windows</span>
                 <span>08:29:40</span>
               </div>
             </div>
-            
-            <div>
-              <nav className="space-y-3">
+
+            {/* Right side - Three columns of links */}
+            <div className="flex space-x-16">
+              {/* Column 1 */}
+              <div className="space-y-3">
                 <Link href="/team" className="block text-sm text-gray-600 hover:text-black transition-colors">Team</Link>
                 <Link href="/partners" className="block text-sm text-gray-600 hover:text-black transition-colors">Partners</Link>
                 <Link href="/awards" className="block text-sm text-gray-600 hover:text-black transition-colors">Awards</Link>
                 <Link href="/resources" className="block text-sm text-gray-600 hover:text-black transition-colors">Resources</Link>
                 <Link href="/office" className="block text-sm text-gray-600 hover:text-black transition-colors">Office</Link>
-              </nav>
-            </div>
-            
-            <div>
-              <nav className="space-y-3 mb-8">
+              </div>
+
+              {/* Column 2 */}
+              <div className="space-y-3">
                 <Link href="https://www.instagram.com/space10/" className="block text-sm text-gray-600 hover:text-black transition-colors">Instagram</Link>
                 <Link href="https://dk.linkedin.com/company/space-10" className="block text-sm text-gray-600 hover:text-black transition-colors">LinkedIn</Link>
                 <Link href="https://www.spatial.io/s/SPACE10-Virtual-Public-63452f5578e70000017ad99d?share=1714815963659677697" className="block text-sm text-gray-600 hover:text-black transition-colors">Virtual</Link>
                 <Link href="https://github.com/space10-community" className="block text-sm text-gray-600 hover:text-black transition-colors">GitHub</Link>
-              </nav>
-              
-              <div className="space-y-2">
-                <Link href="/privacy-policy" className="block text-xs text-gray-500 hover:text-gray-700 transition-colors">Privacy Policy</Link>
-                <Link href="/terms-and-conditions" className="block text-xs text-gray-500 hover:text-gray-700 transition-colors">Terms & Conditions</Link>
-                <button className="block text-xs text-gray-500 hover:text-gray-700 transition-colors">Cookie Settings</button>
+              </div>
+
+              {/* Column 3 */}
+              <div className="space-y-3">
+                <Link href="/privacy-policy" className="block text-sm text-gray-600 hover:text-black transition-colors">Privacy Policy</Link>
+                <Link href="/terms-and-conditions" className="block text-sm text-gray-600 hover:text-black transition-colors">Terms & Conditions</Link>
+                <button className="block text-sm text-gray-600 hover:text-black transition-colors text-left">Cookie Settings</button>
               </div>
             </div>
           </div>
