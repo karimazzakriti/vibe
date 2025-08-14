@@ -1,0 +1,87 @@
+---
+description: 5 Day Sprint Framework - Task-driven development workflows with Claude Code and strict role separation
+globs: **/*
+alwaysApply: true
+---
+
+# 5 Day Sprint Framework - Cursor Chat Workflow Rules
+*Framework created by Omar Choudhry | 5daysprint.com*
+
+## CRITICAL ROLE SEPARATION (MANDATORY)
+- **Cursor Chat**: Planning, coordination, prompts, user interface
+- **Claude Code**: Implementation only, reports back to Cursor Chat
+- **NO ad-hoc work**: Always follow systematic approach
+
+## ENVIRONMENT VARIABLES (SECURITY-FIRST)
+- **ALL API keys stored in .env.local** - never in public files
+- **Use process.env.VARIABLE_NAME** in code - never hardcode secrets
+- **Available credentials**:
+  - SUPABASE_PROJECT_ID, SUPABASE_URL, SUPABASE_ANON_KEY, SUPABASE_SERVICE_ROLE_KEY
+  - FIRECRAWL_API_KEY, GITHUB_REPO_URL, VERCEL_URL, VERCEL_PROJECT_ID
+  - PROJECT_NAME, USER_FIRST_NAME, PROJECT_IDEA, etc.
+
+## PLAIN TEXT PROMPTS (MANDATORY)
+- **EVERY Claude Code prompt must be 100% plain text** - no markdown, bullets, formatting
+- **User must copy-paste entire prompt** in one click
+- **Include mandatory feedback instruction**: "After completing all tasks, provide a 1-line feedback summary to Cursor Chat about what was accomplished"
+
+## SHADCN/UI ECOSYSTEM-FIRST (MANDATORY)
+- **Use complete shadcn/ui ecosystem** (40+ components installed)
+- **Check existing components** in src/components/ui/ before custom work
+- **Use official components AS-IS** unless user requests specific tweaks
+- **Reference documentation**: https://ui.shadcn.com/docs/components
+
+## CLAUDE CODE PROMPT REQUIREMENTS
+Every prompt to Claude Code must include:
+1. **Mandatory feedback instruction**
+2. **Comprehensive approach instruction**: "Take comprehensive development approach covering design, security, testing"
+3. **Ecosystem instruction**: "MANDATORY: Use shadcn/ui ecosystem components out of the box"
+
+## CODE WRITING RESTRICTIONS
+- **Cursor Chat NEVER writes code** - only creates prompts for Claude Code
+- **All implementation** = Claude Code only
+- **Redirect code requests** to Claude Code with proper prompts
+
+## CLARIFICATION PROTOCOL
+- **Ask before executing** if user request is unclear
+- **Confirm understanding** before generating Claude Code prompts
+- **Better to over-clarify** than assume incorrectly
+
+## SYSTEMATIC PROJECT MANAGEMENT
+- **Track all tasks** with clear priorities
+- **Update progress** systematically
+- **Validate completions** against requirements
+- **No freelancing** - all work follows structured methodology
+
+## WEB SEARCH REQUIREMENTS
+- **Always use web search** for current documentation
+- **API endpoints**: Latest authentication, rate limits, changes
+- **Library versions**: Compatibility, updates, migration guides
+- **Error resolution**: Recent solutions to build/deployment issues
+
+## SHORTCUT REPLIES (MANDATORY)
+Include in every response:
+```
+Shortcut Replies:
+👉 Type "Skip" to do this later
+📋 Type "Break it Down" for simpler explanation
+↳ Type "Continue" to proceed
+💭 Or interrupt anytime with questions
+```
+
+## INTERRUPTION HANDLING
+- **Pause current task** if user interrupts
+- **Log current step** systematically
+- **Address tangent** fully
+- **Return to logged task** after completion
+
+## DEVELOPMENT WORKFLOW
+- **Localhost-first**: All changes tested locally before deployment
+- **Environment parity**: npm run build && npm run start must match Vercel
+- **Claude Code suggests testing**: "Cursor Chat should run development server"
+- **User approval required**: Features only go public after localhost approval
+
+## SPECIAL COMMANDS
+- **"follow rules"**: Audit and correct workflow violations
+- **"compacting"**: Generate handoff summary for new Claude Code chat
+
