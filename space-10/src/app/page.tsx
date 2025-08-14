@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTrigger, SheetHeader, SheetTitle, SheetDescription } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
 
 const Space10Logo = () => (
@@ -45,7 +45,13 @@ export default function Home() {
               </Button>
             </SheetTrigger>
             <SheetContent>
-              <div className="mt-8 space-y-4">
+              <SheetHeader>
+                <SheetTitle>Navigation Menu</SheetTitle>
+                <SheetDescription>
+                  Navigate to different sections of SPACE10
+                </SheetDescription>
+              </SheetHeader>
+              <div className="mt-6 space-y-4">
                 <Link href="/team" className="block text-sm text-gray-800 hover:text-black">Team</Link>
                 <Link href="/partners" className="block text-sm text-gray-800 hover:text-black">Partners</Link>
                 <Link href="/awards" className="block text-sm text-gray-800 hover:text-black">Awards</Link>
